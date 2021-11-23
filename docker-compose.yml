@@ -1,0 +1,16 @@
+version: "3"
+services:
+  my_crd:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: always
+    container_name: my_crd
+    tty: true
+    networks:
+      - no-internet
+
+networks:
+  no-internet:
+    driver: bridge
+    internal: true
